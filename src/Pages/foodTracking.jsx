@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { FETCH_FOOD } from "../actions";
 
 const FoodTracking = () => {
   const dispatch = useDispatch();
-  const state = useSelector((state) => state.exerciseList);
+  const state = useSelector((state) => state.foodList);
 
   const [name, setName] = useState("");
   const [protein, setProtein] = useState(0);
@@ -20,6 +21,10 @@ const FoodTracking = () => {
     dispatch();
     //add action for removing excercise
   };
+
+  useEffect(() => {
+    dispatch(FETCH_FOOD());
+  }, []);
 
   return (
     <div>
@@ -70,12 +75,14 @@ const FoodTracking = () => {
       </div>
 
       <div>
-        {state.map(({ name, calories, protein, carbohydrates, fat }) => (
+        {state.map(({ foodName, calories, protein, carbohydrate, fat }) => (
           <li>
-            <p>{name}</p>
-            <p>{calories} kcal</p>
+            <p>
+              <b>{foodName}</b>
+            </p>
+            <p>Calories - {calories} kcal</p>
             <p>Protien - {protein} gms</p>
-            <p>Carbohydrates - {carbohydrates} gms</p>
+            <p>Carbohydrates - {carbohydrate} gms</p>
             <p>Fat - {fat} gms</p>
             <button onClick={() => removeFunction()}>Remove</button>
           </li>

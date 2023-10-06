@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { FETCH_GOAL } from "../actions";
 
 const GoalTracking = () => {
   const dispatch = useDispatch();
-  const state = useSelector((state) => state.exerciseList);
+  const state = useSelector((state) => state.goalList);
+  console.log(state);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [targetDate, setTargetDate] = useState();
@@ -18,6 +20,11 @@ const GoalTracking = () => {
     dispatch();
     //add action for removing excercise
   };
+
+  useEffect(() => {
+    dispatch(FETCH_GOAL());
+  }, []);
+
   return (
     <div>
       <label for="name">Goal Name</label>
@@ -65,7 +72,7 @@ const GoalTracking = () => {
       </div>
 
       <div>
-        {state.map(
+        {state?.map(
           ({ name, description, date, targetCaloriesValue, status }) => (
             <li>
               <p>{name}</p>

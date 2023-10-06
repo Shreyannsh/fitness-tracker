@@ -1,20 +1,26 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { FETCH_EXCERCISES } from "../actions";
+import { FETCH_EXCERCISES, ADD_EXCERCISE } from "../actions";
 
 const ExerciseTracking = () => {
   const dispatch = useDispatch();
 
   const state = useSelector((state) => state.exerciseList);
-  console.log(state, "state");
   const error = useSelector((state) => state.error);
 
-  const [name, setName] = useState("");
-  const [duration, setDuration] = useState(0);
-  const [caloriesBurnt, setCaloriesBurnt] = useState(0);
+  const [newExcercise, setNewExcercise] = useState({
+    name: "",
+    duration: 0,
+    caloriesBurnt: 0,
+  });
+
+  // const [name, setName] = useState("");
+  // const [duration, setDuration] = useState(0);
+  // const [caloriesBurnt, setCaloriesBurnt] = useState(0);
+  // const typeValue = 0; // just added to do API call as on backend there will be 4 arguments;
 
   const addExcerciseFunction = () => {
-    dispatch();
+    dispatch(ADD_EXCERCISE(newExcercise));
     //add action for adding excercise
   };
 
@@ -32,25 +38,48 @@ const ExerciseTracking = () => {
       <label for="name">Excersize Name</label>
       <input
         name="name"
-        value={name}
+        value={newExcercise.name}
         type="text"
-        onChange={(e) => setName(e.target.value)}
+        onChange={(e) =>
+          setNewExcercise({ ...newExcercise, name: e.target.value })
+        }
       />
 
       <label for="duration">Duration (in mins) </label>
       <input
         name="duration"
-        value={duration}
+        value={newExcercise.duration}
         type="number"
-        onChange={(e) => setDuration(e.target.value)}
+        onChange={(e) =>
+          setNewExcercise({
+            ...newExcercise,
+            duration: parseInt(e.target.value),
+          })
+        }
       />
+
+      <select
+        onChange={(e) =>
+          setNewExcercise({
+            ...newExcercise,
+            caloriesBurnt: parseInt(e.target.value * newExcercise.duration),
+          })
+        }
+      >
+        <option value="0"> Excercise type</option>
+        <option value="9.0">Endurance Exercise</option>
+        <option value="6.0">Strength training</option>
+        <option value="8.0">Balance Exercise</option>
+        <option value="2.7">Flexibility Exercise</option>
+      </select>
 
       <label for="calories">Calories Burned</label>
       <input
         name="calories"
-        value={caloriesBurnt}
+        value={newExcercise.caloriesBurnt}
         type="number"
-        onChange={(e) => setCaloriesBurnt(e.target.value)}
+        placeholder="calories burnt"
+        readOnly
       />
 
       <button onClick={() => addExcerciseFunction()}>Add excercise</button>

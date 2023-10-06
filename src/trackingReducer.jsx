@@ -8,7 +8,7 @@ const initialState = {
   },
   exerciseList: [],
   foodList: [],
-  goalTracking: [],
+  goalList: [],
 };
 
 const trackingReducer = (state = initialState, action) => {
@@ -17,6 +17,18 @@ const trackingReducer = (state = initialState, action) => {
       return {
         ...state,
         exerciseList: action.payload,
+      };
+
+    case "FETCHED_FOOD_LIST":
+      return {
+        ...state,
+        foodList: action.payload,
+      };
+
+    case "FETCHED_GOAL_LIST":
+      return {
+        ...state,
+        goalList: action.payload,
       };
 
     case "ADD_EXERCISE":
