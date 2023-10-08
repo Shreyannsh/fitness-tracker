@@ -1,0 +1,27 @@
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: fixed;
+  margin-left: 1rem;
+  /* margin-right: 2rem; */
+  margin-top: 5rem;
+  border-right: solid 1px rgb(66, 63, 63);
+  text-align: left;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  margin-top: 3rem;
+  /* margin: auto 0; */
+  padding: 1rem;
+  font-size: 1.7rem;
+  border-radius: 5px;
+  font-weight: bolder;
+}
+
+.link:hover {
+  background-color: rgb(66, 63, 63);
+  color: azure;
+}

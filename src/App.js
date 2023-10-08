@@ -1,23 +1,20 @@
 import "./App.css";
 
-import { Link, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
-import Dashboard from "./Pages/dashboard";
-import ExerciseTracking from "./Pages/exerciseTracking";
-import FoodTracking from "./Pages/foodTracking";
-import GoalTracking from "./Pages/goalTracking";
+import Dashboard from "./Pages/dashboard/dashboard";
+import ExerciseTracking from "./Pages/excerciseTracking/exerciseTracking";
+import FoodTracking from "./Pages/foodTracking/foodTracking";
+import GoalTracking from "./Pages/goalTracking/goalTracking";
+import Navbar from "./Components/navbar/navbar";
+
+import Header from "./Components/header/header";
 
 function App() {
   return (
     <div className="App">
-      {/* <h1>Hello</h1> */}
-      <nav className="navbar">
-        <h2>Fitness Tracker</h2>
-        <Link to="/">Dashboard</Link>
-        <Link to="excercise">Exercise Tracking</Link>
-        <Link to="food">Food Tracking</Link>
-        <Link to="goal">Goal Tracking</Link>
-      </nav>
+      <Header />
+      <Navbar />
 
       <Routes>
         <Route path="/" element={<Dashboard />} />

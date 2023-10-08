@@ -1,14 +1,8 @@
 const initialState = {
-  dashboard: {
-    totalCaloriesBurnt: 0,
-    totalCaloriesConsumed: 0,
-    totalCaloriesGoal: 0,
-    remainingCaloriesToGoal: 0,
-    error: "",
-  },
   exerciseList: [],
   foodList: [],
   goalList: [],
+  error: "",
 };
 
 const trackingReducer = (state = initialState, action) => {
@@ -32,24 +26,27 @@ const trackingReducer = (state = initialState, action) => {
       };
 
     case "ADD_EXERCISE":
+      console.log(action.payload);
       return {
         ...state,
         exerciseList: [...state.exerciseList, action.payload],
       };
 
     case "ADD_FOOD":
+      console.log(action.payload);
       return { ...state, foodList: [...state.foodList, action.payload] };
 
     case "ADD_GOAL":
       return {
         ...state,
-        goalTracking: [...state.goalTracking, action.payload],
+        goalList: [...state.goalList, action.payload],
       };
 
     case "REMOVE_EXCERCISE":
       const updatedExerciseList = state.exerciseList.filter(
-        ({ name }) => name !== action.name
+        ({ _id }) => _id !== action.payload
       );
+      console.log(updatedExerciseList, "updatedExcerciseList");
       return {
         ...state,
         exerciseList: updatedExerciseList,
@@ -57,20 +54,20 @@ const trackingReducer = (state = initialState, action) => {
 
     case "REMOVE_FOOD":
       const updatedFoodList = state.foodList.filter(
-        ({ name }) => name !== action.name
+        ({ _id }) => _id !== action.payload
       );
       return {
         ...state,
-        exerciseList: updatedFoodList,
+        foodList: updatedFoodList,
       };
 
-    case "REMOVE_EXCERCISE":
-      const updatedGoalList = state.exerciseList.filter(
-        ({ name }) => name !== action.name
+    case "REMOVE_GOAL":
+      const updatedGoalList = state.goalList.filter(
+        ({ _id }) => _id !== action.payload
       );
       return {
         ...state,
-        exerciseList: updatedGoalList,
+        goalList: updatedGoalList,
       };
 
     case "ERROR":
