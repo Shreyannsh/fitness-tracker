@@ -1,20 +1,19 @@
 .navbar {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  position: fixed;
+  /* align-items: stretch; */
   margin-left: 1rem;
-  /* margin-right: 2rem; */
+  margin-right: 1rem;
   margin-top: 5rem;
   border-right: solid 1px rgb(66, 63, 63);
   text-align: left;
+  width: 16rem;
 }
 
 .link {
   text-decoration: none;
   color: black;
   margin-top: 3rem;
-  /* margin: auto 0; */
   padding: 1rem;
   font-size: 1.7rem;
   border-radius: 5px;

@@ -1,27 +1,26 @@
-.excercisePage {
+.foodPage {
   padding-top: 5rem;
 }
-.exerciseList {
+.foodList {
   list-style: none;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.exercise {
-  border: 3px solid rgb(246, 38, 38);
-  box-shadow: 1px 5px 5px 1px rgb(246, 38, 38, 0.4);
+.food {
+  border: 3px solid green;
+  box-shadow: 1px 5px 5px 1px green;
   margin: 1rem 1rem;
   padding: 0.5rem 1rem;
   border-radius: 10px;
   word-break: break-all;
-  background-color: ;
-  color: rgb(246, 38, 38);
+  color: green;
   font-size: 20px;
   font-weight: 500;
 }
 
-.addExerciseBtn {
+.addFoodBtn {
   font-weight: bold;
   font-size: 20px;
   background-color: palevioletred;
@@ -29,7 +28,7 @@
   cursor: pointer;
 }
 
-.addExerciseBtn:hover {
+.addFoodBtn:hover {
   background-color: rgb(130, 37, 68);
   color: palevioletred;
 }
