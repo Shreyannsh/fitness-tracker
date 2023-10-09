@@ -5,6 +5,8 @@ import { useDispatch } from "react-redux";
 import { ADD_FOOD } from "../../actions";
 import { useState } from "react";
 
+import { toast } from "react-toastify";
+
 export default function AddFoodModal(props) {
   const dispatch = useDispatch();
 
@@ -17,8 +19,22 @@ export default function AddFoodModal(props) {
   });
 
   const addFoodFunction = () => {
-    dispatch(ADD_FOOD(newFood));
-    props.onClose();
+    const values = Object.values(newFood);
+    const emptyEntry = values.reduce((acc, crr) => {
+      if (crr === "" || crr === 0) {
+        acc = true;
+      } else {
+        acc = false;
+      }
+      return acc;
+    }, false);
+
+    if (!emptyEntry) {
+      dispatch(ADD_FOOD(newFood));
+      props.onClose();
+    } else {
+      toast.error("Missing Fields!");
+    }
   };
 
   if (!props.show) {

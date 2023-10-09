@@ -1,11 +1,22 @@
 .foodPage {
   padding-top: 5rem;
+  position: relative;
 }
 .foodList {
   list-style: none;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-top: 6rem;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  margin-top: 1rem;
+  margin-left: 1rem;
 }
 
 .food {
@@ -21,6 +32,8 @@
 }
 
 .addFoodBtn {
+  height: 43vh;
+  width: 15vw;
   font-weight: bold;
   font-size: 20px;
   background-color: palevioletred;
@@ -42,4 +55,9 @@
 
 .removeBtn:hover {
   color: black;
+}
+
+.loader {
+  height: 10vh;
+  width: 10vh;
 }

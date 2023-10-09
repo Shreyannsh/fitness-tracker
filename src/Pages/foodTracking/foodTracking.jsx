@@ -2,14 +2,17 @@ import "./foodTracking.css";
 
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
-import { REMOVE_FOOD } from "../../actions";
+import { REMOVE_FOOD, FETCH_FOOD } from "../../actions";
 
 import AddFoodModal from "../../modals/addFoodModal/addFoodModal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const FoodTracking = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.foodList);
+  const loading = useSelector((state) => state.loading);
+
+  console.log(loading);
 
   const [show, setShow] = useState(false);
 
@@ -17,11 +20,15 @@ const FoodTracking = () => {
     dispatch(REMOVE_FOOD(foodId));
   };
 
+  useEffect(() => {
+    dispatch(FETCH_FOOD());
+  }, []);
+
   return (
     <div className="foodPage">
       <AddFoodModal onClose={() => setShow(false)} show={show} />
 
-      <div>
+      <div className="title">
         <h1>Food List</h1>
       </div>
 

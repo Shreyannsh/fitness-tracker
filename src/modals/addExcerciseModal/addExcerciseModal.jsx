@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { ADD_EXCERCISE } from "../../actions";
 
+import { toast } from "react-toastify";
+
 export default function AddExerciseModal(props) {
   const dispatch = useDispatch();
   const [newExcercise, setNewExcercise] = useState({
@@ -13,8 +15,16 @@ export default function AddExerciseModal(props) {
   });
 
   const addExcerciseFunction = () => {
-    dispatch(ADD_EXCERCISE(newExcercise));
-    props.onClose();
+    if (
+      newExcercise.name !== "" &&
+      newExcercise.duration !== 0 &&
+      newExcercise.calories !== 0
+    ) {
+      dispatch(ADD_EXCERCISE(newExcercise));
+      props.onClose();
+    } else {
+      toast.error("missing fields!");
+    }
   };
 
   if (!props.show) {

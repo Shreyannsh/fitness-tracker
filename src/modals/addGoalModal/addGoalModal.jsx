@@ -4,6 +4,8 @@ import { ADD_GOAL } from "../../actions";
 
 import "./addGoalModal.css";
 
+import { toast } from "react-toastify";
+
 export default function AddGoalModal(props) {
   const dispatch = useDispatch();
   const [newGoal, setNewGoal] = useState({
@@ -23,8 +25,22 @@ export default function AddGoalModal(props) {
   };
 
   const addGoalFunction = () => {
-    dispatch(ADD_GOAL(newGoal));
-    props.onClose();
+    const values = Object.values(newGoal);
+    const emptyEntry = values.reduce((acc, crr) => {
+      if (crr === "" || crr === 0) {
+        acc = true;
+      } else {
+        acc = false;
+      }
+      return acc;
+    }, false);
+
+    if (!emptyEntry) {
+      dispatch(ADD_GOAL(newGoal));
+      props.onClose();
+    } else {
+      toast.error("Missing Fields!");
+    }
   };
 
   if (!props.show) {
@@ -39,6 +55,7 @@ export default function AddGoalModal(props) {
         </span>
         <label htmlFor="name">Goal Name</label>
         <input
+          className="input"
           name="name"
           value={newGoal.goalName}
           type="text"
@@ -46,6 +63,7 @@ export default function AddGoalModal(props) {
         />
         <label htmlFor="description">Goal Description</label>
         <input
+          className="input"
           name="description"
           value={newGoal.description}
           type="text"
@@ -55,12 +73,14 @@ export default function AddGoalModal(props) {
         />
         <label htmlFor="date">Target Date</label>
         <input
+          className="input"
           name="date"
           type="date"
           onChange={(e) => setDateFunc(e.target.value)}
         />
         <label htmlFor="targetCaloriesValue">Target Calories Value</label>
         <input
+          className="input"
           name="targetCaloriesValue"
           value={newGoal.targetCalories}
           type="number"
@@ -78,7 +98,9 @@ export default function AddGoalModal(props) {
         <option value="achieved">Achieved</option>
         <option value="abandoned">Abandoned</option>
       </select> */}
-        <button onClick={() => addGoalFunction()}>Add goal</button>
+        <button className="addBtn" onClick={() => addGoalFunction()}>
+          Add goal
+        </button>
       </div>
     </div>
   );

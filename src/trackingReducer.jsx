@@ -3,6 +3,7 @@ const initialState = {
   foodList: [],
   goalList: [],
   error: "",
+  loading: false,
 };
 
 const trackingReducer = (state = initialState, action) => {
@@ -70,10 +71,14 @@ const trackingReducer = (state = initialState, action) => {
         goalList: updatedGoalList,
       };
 
+    case "START_LOADING":
+      return { ...state, loading: true };
+
+    case "STOP_LOADING":
+      return { ...state, loading: false };
+
     case "ERROR":
       return { ...state, error: action.payload };
-
-    //cases for dashboard to be written
 
     default:
       return state;

@@ -1,11 +1,22 @@
 .goalPage {
   padding-top: 5rem;
+  position: relative;
 }
 .goalList {
   list-style: none;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-top: 6rem;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  margin-top: 1rem;
+  margin-left: 1rem;
 }
 
 .goal {
@@ -15,13 +26,14 @@
   padding: 0.5rem 1rem;
   border-radius: 10px;
   word-break: break-all;
-  background-color: ;
   color: (28, 28, 190);
   font-size: 20px;
   font-weight: 500;
 }
 
 .addGoalBtn {
+  height: 43vh;
+  width: 15vw;
   font-weight: bold;
   font-size: 20px;
   background-color: palevioletred;

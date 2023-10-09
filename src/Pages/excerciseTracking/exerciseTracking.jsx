@@ -3,10 +3,10 @@ import "./exerciseTracking.css";
 import { RiDeleteBin5Line } from "react-icons/ri";
 
 import { useDispatch, useSelector } from "react-redux";
-import { REMOVE_EXCERCISE } from "../../actions";
+import { REMOVE_EXCERCISE, FETCH_EXCERCISES } from "../../actions";
 
 import AddExerciseModal from "../../modals/addExcerciseModal/addExcerciseModal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const ExerciseTracking = () => {
   const dispatch = useDispatch();
@@ -20,11 +20,15 @@ const ExerciseTracking = () => {
     dispatch(REMOVE_EXCERCISE(excerciseId));
   };
 
+  useEffect(() => {
+    dispatch(FETCH_EXCERCISES());
+  }, []);
+
   return (
     <div className="excercisePage">
       <AddExerciseModal onClose={() => setShow(false)} show={show} />
 
-      <div>
+      <div className="title">
         <h1>Excercise List</h1>
       </div>
 

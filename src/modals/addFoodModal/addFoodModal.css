@@ -5,6 +5,7 @@
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.3);
+  z-index: 99;
 }
 .innerFood {
   width: 30rem;
@@ -20,6 +21,8 @@
   font-weight: 500;
   position: relative;
   font-size: larger;
+  padding-bottom: 3rem;
+  padding-top: 0rem;
 }
 
 .input {
@@ -37,20 +40,21 @@
   margin-top: 1rem;
   font-size: 18px;
   cursor: pointer;
+  padding: 10px 0px;
+  padding-bottom: 25px;
 }
 
-.closeBtn {
+.innerFood .closeBtn {
   border: solid 1px;
   background-color: red;
   border-radius: 5px;
   position: relative;
   left: 100%;
-  top: -13px;
+  top: 1rem;
   padding: 2px 7px;
   width: fit-content;
   cursor: pointer;
 }
-
 .closeBtn:hover {
   color: rgb(108, 0, 0);
 }

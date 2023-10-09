@@ -3,10 +3,10 @@ import "./goalTracking.css";
 import { RiDeleteBin5Line } from "react-icons/ri";
 
 import { useSelector, useDispatch } from "react-redux";
-import { REMOVE_GOAL } from "../../actions";
+import { REMOVE_GOAL, FETCH_GOAL } from "../../actions";
 
 import AddGoalModal from "../../modals/addGoalModal/addGoalModal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const GoalTracking = () => {
   const dispatch = useDispatch();
@@ -18,11 +18,15 @@ const GoalTracking = () => {
     dispatch(REMOVE_GOAL(goalId));
   };
 
+  useEffect(() => {
+    dispatch(FETCH_GOAL());
+  }, []);
+
   return (
     <div className="goalPage">
       <AddGoalModal onClose={() => setShow(false)} show={show} />
 
-      <div>
+      <div className="title">
         <h1>Goal List</h1>
       </div>
 

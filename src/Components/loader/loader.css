@@ -1,0 +1,12 @@
+.loader {
+  height: 10vh;
+  width: 10vh;
+}
+
+.parent {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
