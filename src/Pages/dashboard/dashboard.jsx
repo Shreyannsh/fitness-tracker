@@ -8,6 +8,7 @@ const Dashboard = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch({ type: "IS_ACTIVE", payload: "dashboard" });
     dispatch(FETCH_EXCERCISES());
     dispatch(FETCH_FOOD());
     dispatch(FETCH_GOAL());

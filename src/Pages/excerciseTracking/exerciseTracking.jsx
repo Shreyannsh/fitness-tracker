@@ -21,6 +21,7 @@ const ExerciseTracking = () => {
   };
 
   useEffect(() => {
+    dispatch({ type: "IS_ACTIVE", payload: "excercise" });
     dispatch(FETCH_EXCERCISES());
   }, []);
 

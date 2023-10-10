@@ -4,6 +4,7 @@ const initialState = {
   goalList: [],
   error: "",
   loading: false,
+  isActive: "",
 };
 
 const trackingReducer = (state = initialState, action) => {
@@ -76,6 +77,9 @@ const trackingReducer = (state = initialState, action) => {
 
     case "STOP_LOADING":
       return { ...state, loading: false };
+
+    case "IS_ACTIVE":
+      return { ...state, isActive: action.payload };
 
     case "ERROR":
       return { ...state, error: action.payload };

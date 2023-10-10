@@ -19,6 +19,7 @@ const GoalTracking = () => {
   };
 
   useEffect(() => {
+    dispatch({ type: "IS_ACTIVE", payload: "goal" });
     dispatch(FETCH_GOAL());
   }, []);
 

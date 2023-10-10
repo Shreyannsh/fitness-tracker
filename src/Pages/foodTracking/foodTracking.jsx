@@ -21,6 +21,7 @@ const FoodTracking = () => {
   };
 
   useEffect(() => {
+    dispatch({ type: "IS_ACTIVE", payload: "food" });
     dispatch(FETCH_FOOD());
   }, []);
 

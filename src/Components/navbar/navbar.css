@@ -14,10 +14,23 @@
   text-decoration: none;
   color: black;
   margin-top: 3rem;
+  margin-right: 0.5rem;
   padding: 1rem;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   border-radius: 5px;
   font-weight: bolder;
+}
+
+.isActive {
+  text-decoration: none;
+  margin-top: 3rem;
+  margin-right: 0.5rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  font-weight: bolder;
+  background-color: rgb(66, 63, 63);
+  color: azure;
 }
 
 .link:hover {
