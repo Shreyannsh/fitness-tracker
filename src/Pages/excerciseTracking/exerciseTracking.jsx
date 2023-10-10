@@ -29,9 +29,7 @@ const ExerciseTracking = () => {
     <div className="excercisePage">
       <AddExerciseModal onClose={() => setShow(false)} show={show} />
 
-      <div className="title">
-        <h1>Excercise List</h1>
-      </div>
+      <h1 className="title">Excercise List</h1>
 
       <div className="exerciseList">
         <button
@@ -40,16 +38,23 @@ const ExerciseTracking = () => {
         >
           Add Excercise
         </button>
-        {state?.map(({ _id, name, duration, caloriesBurned }) => (
-          <li key={_id} className="exercise">
-            <p>{name}</p>
-            <p>{duration} mins</p>
-            <p>{caloriesBurned} calories burnt</p>
-            <span onClick={() => removeFunction(_id)}>
-              <RiDeleteBin5Line className="removeBtn" />
-            </span>
-          </li>
-        ))}
+        {state.length <= 0 ? (
+          <h1 className="emptyListText">EMPTY LIST !</h1>
+        ) : (
+          state?.map(({ _id, name, duration, caloriesBurned }) => (
+            <li key={_id} className="exercise">
+              <p>
+                <b>{name}</b>
+              </p>
+              <p>{duration} mins</p>
+              <p>{caloriesBurned} calories burnt </p>
+              <p></p>
+              <span onClick={() => removeFunction(_id)}>
+                <RiDeleteBin5Line className="removeBtn" />
+              </span>
+            </li>
+          ))
+        )}
       </div>
     </div>
   );

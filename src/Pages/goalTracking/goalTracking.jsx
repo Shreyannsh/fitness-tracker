@@ -35,26 +35,32 @@ const GoalTracking = () => {
         <button className="goal addGoalBtn" onClick={() => setShow(true)}>
           Add Goal
         </button>
-        {state?.map(
-          ({
-            _id,
-            goalName,
-            description,
-            targetDate,
-            targetCalories,
-            status,
-          }) => (
-            <li key={_id} className="goal">
-              <p>{goalName}</p>
-              <p>Description: {description}</p>
-              <p>Date: {targetDate}</p>
-              <p>Calories: {targetCalories} cals</p>
-              <p>Status: {status}</p>
-              <span onClick={() => removeFunction(_id)}>
-                {" "}
-                <RiDeleteBin5Line className="removeBtn" />
-              </span>
-            </li>
+        {state.length <= 0 ? (
+          <h1 className="emptyListText">EMPTY LIST !</h1>
+        ) : (
+          state?.map(
+            ({
+              _id,
+              goalName,
+              description,
+              targetDate,
+              targetCalories,
+              status,
+            }) => (
+              <li key={_id} className="goal">
+                <p>
+                  <b>{goalName}</b>
+                </p>
+                <p>Description: {description}</p>
+                <p>Date: {targetDate}</p>
+                <p>Calories: {targetCalories} cals</p>
+                <p>Status: {status}</p>
+                <span onClick={() => removeFunction(_id)}>
+                  {" "}
+                  <RiDeleteBin5Line className="removeBtn" />
+                </span>
+              </li>
+            )
           )
         )}
       </div>

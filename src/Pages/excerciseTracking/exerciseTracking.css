@@ -1,38 +1,41 @@
 .excercisePage {
   padding-top: 5rem;
   position: relative;
+  width: 100%;
 }
 .exerciseList {
   list-style: none;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-top: 6rem;
+  margin-top: 4rem;
 }
 
 .title {
-  display: flex;
-  justify-content: center;
   position: absolute;
   left: 0;
-  margin-top: 1rem;
-  margin-left: 1rem;
+  right: 0;
+  top: 3.5rem;
 }
 
 .exercise {
-  border: 3px solid rgb(246, 38, 38);
-  box-shadow: 1px 5px 5px 1px rgb(246, 38, 38, 0.4);
+  box-shadow: 1px 3px 6px 1px rgb(0, 0, 0, 0.4);
   margin: 1rem 1rem;
-  padding: 0.5rem 1rem;
+  padding: 0rem 1rem;
   border-radius: 10px;
   word-break: break-all;
   color: rgb(246, 38, 38);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
+  position: relative;
+  text-align: left;
+  /* display: flex;
+  flex-direction: column; */
 }
 
 .addExerciseBtn {
-  height: 30vh;
+  box-shadow: 1px 3px 6px 1px rgb(0, 0, 0, 0.4);
+  height: 25vh;
   font-weight: bold;
   font-size: 20px;
   background-color: palevioletred;
@@ -48,10 +51,22 @@
 .removeBtn {
   color: rgb(248, 0, 0);
   border-radius: 5px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px 10px;
 }
 
 .removeBtn:hover {
   color: black;
+}
+
+.exerciseList .emptyListText {
+  margin: 2rem 12.5rem 4rem 8rem;
+  border: 5px solid;
+  padding: 2rem 5rem;
+  box-shadow: 0px 2px 6px 2px rgb(0, 0, 0, 0.6);
+  border-radius: 5px;
 }
