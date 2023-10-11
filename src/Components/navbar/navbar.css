@@ -1,10 +1,8 @@
 .navbar {
   display: flex;
   flex-direction: column;
-  /* align-items: stretch; */
-  margin-left: 1rem;
-  margin-right: 1rem;
-  margin-top: 4rem;
+  margin: 4rem 1rem;
+  padding-bottom: 4%;
   border-right: solid 1px rgb(66, 63, 63);
   text-align: left;
   width: 16rem;

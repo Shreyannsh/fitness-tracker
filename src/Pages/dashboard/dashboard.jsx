@@ -51,7 +51,10 @@ const Dashboard = () => {
         </div>
         <div className="category2">
           <p className="text d">
-            {totalCaloriesGoal - (totalCaloriesConsumed - totalCaloriesBurnt)}
+            {totalCaloriesBurnt && totalCaloriesConsumed && totalCaloriesGoal
+              ? 0
+              : totalCaloriesGoal -
+                (totalCaloriesConsumed - totalCaloriesBurnt)}
           </p>
           <h3>Total Calories to Goal</h3>
         </div>
