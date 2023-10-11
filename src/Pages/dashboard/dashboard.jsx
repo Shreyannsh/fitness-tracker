@@ -52,9 +52,8 @@ const Dashboard = () => {
         <div className="category2">
           <p className="text d">
             {totalCaloriesBurnt && totalCaloriesConsumed && totalCaloriesGoal
-              ? 0
-              : totalCaloriesGoal -
-                (totalCaloriesConsumed - totalCaloriesBurnt)}
+              ? totalCaloriesGoal - (totalCaloriesConsumed - totalCaloriesBurnt)
+              : 0}
           </p>
           <h3>Total Calories to Goal</h3>
         </div>
