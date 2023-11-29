@@ -4,7 +4,7 @@ import "../../commonPageCss.css";
 import { RiDeleteBin5Line } from "react-icons/ri";
 
 import { useDispatch, useSelector } from "react-redux";
-import { REMOVE_EXCERCISE, FETCH_EXCERCISES } from "../../actions";
+import { REMOVE_EXCERCISE, FETCH_EXCERCISES } from "../../reducer/actions";
 
 import AddExerciseModal from "../../modals/addExcerciseModal/addExcerciseModal";
 import { useState, useEffect } from "react";
@@ -15,8 +15,7 @@ const ExerciseTracking = () => {
   const [show, setShow] = useState(false);
 
   const state = useSelector((state) => state.exerciseList);
-  const error = useSelector((state) => state.error);
-  const loading = useSelector((state) => state.isLoading);
+  const loading = useSelector((state) => state.loading);
 
   const removeFunction = (excerciseId) => {
     dispatch(REMOVE_EXCERCISE(excerciseId));
@@ -26,6 +25,8 @@ const ExerciseTracking = () => {
     dispatch({ type: "IS_ACTIVE", payload: "excercise" });
     dispatch(FETCH_EXCERCISES());
   }, []);
+
+  console.log(state.length, loading);
 
   return (
     <div className="pageParent">
@@ -39,7 +40,9 @@ const ExerciseTracking = () => {
           Add Excercise
         </button>
         {state.length <= 0 && loading === false ? (
-          <h1 className="emptyListText">EMPTY LIST !</h1>
+          <div className="emptyListTextBox">
+            <h1 className="emptyListText">EMPTY LIST !</h1>
+          </div>
         ) : (
           state?.map(({ _id, name, duration, caloriesBurned }) => (
             <li key={_id} className="individualComponent exercise">

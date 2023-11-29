@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { ADD_GOAL } from "../../actions";
+import { ADD_GOAL } from "../../reducer/actions";
 
 import "../../commonModalCss.css";
 

@@ -1,7 +1,11 @@
 import "./dashboard.css";
 
 import { useDispatch, useSelector } from "react-redux";
-import { FETCH_FOOD, FETCH_GOAL, FETCH_EXCERCISES } from "../../actions";
+import {
+  FETCH_FOOD,
+  FETCH_GOAL,
+  FETCH_EXCERCISES,
+} from "../../reducer/actions";
 import { useEffect } from "react";
 
 const Dashboard = () => {
@@ -36,7 +40,6 @@ const Dashboard = () => {
   return (
     <div className="outer">
       <div className="dashboard">
-        <img src="../../assets/backgroundd.png" alt="image01" />
         <div className="category1">
           <p className="text a">{totalCaloriesBurnt}</p>
           <h3>Total Calories Burned</h3>

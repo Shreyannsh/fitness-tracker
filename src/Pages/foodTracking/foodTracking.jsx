@@ -3,7 +3,7 @@ import "../../commonPageCss.css";
 
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
-import { REMOVE_FOOD, FETCH_FOOD } from "../../actions";
+import { REMOVE_FOOD, FETCH_FOOD } from "../../reducer/actions";
 
 import AddFoodModal from "../../modals/addFoodModal/addFoodModal";
 import { useState, useEffect } from "react";
@@ -11,7 +11,7 @@ import { useState, useEffect } from "react";
 const FoodTracking = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.foodList);
-  const loading = useSelector((state) => state.isLoading);
+  const loading = useSelector((state) => state.loading);
   const [show, setShow] = useState(false);
 
   const removeFunction = (foodId) => {
@@ -36,7 +36,9 @@ const FoodTracking = () => {
           Add Food
         </button>
         {state.length <= 0 && loading === false ? (
-          <h1 className="emptyListText">EMPTY LIST !</h1>
+          <div className="emptyListTextBox">
+            <h1 className="emptyListText">EMPTY LIST !</h1>
+          </div>
         ) : (
           state.map(
             ({ _id, foodName, calories, protein, carbohydrate, fat }) => (

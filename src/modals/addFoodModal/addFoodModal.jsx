@@ -2,7 +2,7 @@ import "../../commonModalCss.css";
 
 import { useDispatch } from "react-redux";
 
-import { ADD_FOOD } from "../../actions";
+import { ADD_FOOD } from "../../reducer/actions";
 import { useState } from "react";
 
 import { toast } from "react-toastify";

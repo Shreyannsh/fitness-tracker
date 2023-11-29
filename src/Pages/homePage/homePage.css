@@ -1,7 +1,126 @@
 .homePage {
   text-align: center;
+  z-index: 10;
+  margin-top: 4.1rem;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 6, 20, 255);
+
+  background-image: url("../../../public/assets/athletic-background.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: right;
 }
 
 .upperSection {
   display: flex;
+  flex-direction: column;
+  margin-left: 1%;
+  margin-top: 0rem;
+}
+
+.welcomeText {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: left;
+  margin-top: 2rem;
+  font-size: 2rem;
+  word-spacing: 3px;
+  font-style: oblique;
+  color: aliceblue;
+  min-height: 50vh;
+  height: 100%;
+  max-width: 40%;
+}
+
+.welcomeText h1 {
+  margin-top: -1.5rem;
+}
+
+.description {
+  color: aliceblue;
+  position: absolute;
+  bottom: 4rem;
+  /* width: 60%; */
+  font-size: 24px;
+}
+
+.welcomeMsg {
+  font-size: 2rem;
+}
+
+.btnSection {
+  margin-top: 0rem;
+  text-align: left;
+}
+
+.startBtn {
+  font-size: 2.5em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+  font-style: italic;
+  border-radius: 5px;
+  padding: 5px 12px;
+  color: black;
+  background-color: aliceblue;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.startBtn:hover {
+  background-color: rgb(0, 6, 20, 255);
+  border: 1px solid aliceblue;
+  color: aliceblue;
+}
+
+@media (max-width: 809px) {
+  .upperSection {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    margin-top: 3rem;
+    width: 100%;
+    margin-left: 0rem;
+  }
+  .welcomeText {
+    font-size: 2rem;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .welcomeText h1 {
+    margin-top: -2.5rem;
+  }
+  .btnSection {
+    margin-top: 0rem;
+    text-align: center;
+  }
+  .startBtn {
+    font-size: 1.5rem;
+    margin-top: -2rem;
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    padding-top: 2rem;
+    font-size: 20px;
+  }
+
+  .homePage {
+    background-image: url("../../../public/assets/athletic-small-background.jpg");
+    background-repeat: no-repeat;
+    background-size: 150%;
+    background-position-x: center;
+  }
+}
+
+@media (max-width: 427px) {
+  .welcomeText {
+    font-size: 1.5rem;
+    max-width: 100%;
+    text-align: center;
+  }
 }

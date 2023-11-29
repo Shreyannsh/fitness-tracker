@@ -2,7 +2,7 @@ import "../../commonModalCss.css";
 
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { ADD_EXCERCISE } from "../../actions";
+import { ADD_EXCERCISE } from "../../reducer/actions";
 
 import { toast } from "react-toastify";
 

@@ -1,6 +1,15 @@
 .App {
   text-align: center;
   display: flex;
+  min-height: 100vh;
+  height: 100%;
+  background-image: url("../public/assets/backgroundd.png");
+  background-size: cover;
+}
+
+:root {
+  --primary-color: rgb(240, 255, 255, 0.65);
+  --dark-grey: rgb(128, 128, 128, 0.6);
 }
 
 .mainPages {

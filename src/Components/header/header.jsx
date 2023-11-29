@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
 import "./header.css";
 
 export default function Header() {
   return (
     <header className="header">
-      <h1 className="heading"> Fitness Tracker</h1>
+      <Link to="/" className="heading">
+        Fitness Tracker
+      </Link>
     </header>
   );
 }

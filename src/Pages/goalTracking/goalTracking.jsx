@@ -4,7 +4,7 @@ import "../../commonPageCss.css";
 import { RiDeleteBin5Line } from "react-icons/ri";
 
 import { useSelector, useDispatch } from "react-redux";
-import { REMOVE_GOAL, FETCH_GOAL } from "../../actions";
+import { REMOVE_GOAL, FETCH_GOAL } from "../../reducer/actions";
 
 import AddGoalModal from "../../modals/addGoalModal/addGoalModal";
 import { useState, useEffect } from "react";
@@ -12,7 +12,7 @@ import { useState, useEffect } from "react";
 const GoalTracking = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.goalList);
-  const loading = useSelector((state) => state.isLoading);
+  const loading = useSelector((state) => state.loading);
 
   const [show, setShow] = useState(false);
 

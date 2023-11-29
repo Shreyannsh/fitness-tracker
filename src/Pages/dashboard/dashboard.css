@@ -16,25 +16,27 @@
 }
 
 .category1 {
-  border: solid 1px grey;
   border-radius: 1rem;
-  box-shadow: 1px 2px 2px 0px rgb(0, 0, 0, 0.6);
+  box-shadow: 1px 2px 2px 2px var(--dark-grey);
   font-size: 18px;
   font-weight: bolder;
   padding: 8px 17px;
   align-self: center;
   justify-self: center;
+  background-color: var(--primary-color);
+  color: black;
 }
 
 .category2 {
-  border: solid 1px grey;
   border-radius: 1rem;
-  box-shadow: 1px 2px 2px 0px rgb(0, 0, 0, 0.6);
+  box-shadow: 1px 2px 2px 2px var(--dark-grey);
   font-size: 18px;
   font-weight: bolder;
   padding: 20px 28px;
   align-self: center;
   justify-self: center;
+  background-color: var(--primary-color);
+  color: black;
 }
 
 .text {

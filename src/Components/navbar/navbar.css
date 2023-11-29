@@ -1,9 +1,9 @@
 .navbar {
   display: flex;
   flex-direction: column;
-  margin: 4rem 1rem;
+  margin: 4rem 1rem 4rem 0rem;
   padding-bottom: 4%;
-  border-right: solid 1px rgb(66, 63, 63);
+  box-shadow: 1px 2px 2px 0px azure;
   text-align: left;
   width: 16rem;
   min-height: 100vh;
@@ -14,7 +14,7 @@
 
 .link {
   text-decoration: none;
-  color: black;
+  color: azure;
   margin-top: 3rem;
   margin-right: 0.5rem;
   padding: 1rem;
@@ -31,47 +31,41 @@
   font-size: 1.5rem;
   border-radius: 5px;
   font-weight: bolder;
-  background-color: rgb(66, 63, 63);
+  background: rgb(2, 2, 2);
+  background: linear-gradient(
+    0deg,
+    rgba(2, 2, 2, 1) 0%,
+    rgba(255, 255, 255, 0.6) 100%
+  );
+  /* background-color: rgb(66, 63, 63); */
   color: azure;
 }
 
 .link:hover {
-  background-color: rgb(66, 63, 63);
-  color: azure;
+  background: rgb(2, 2, 2);
+  background: linear-gradient(
+    0deg,
+    rgba(2, 2, 2, 1) 0%,
+    rgba(255, 255, 255, 0.6) 100%
+  );
 }
 
 @media (max-width: 786px) {
   .navbar {
-    display: flex;
-    flex-direction: column;
     margin: 4rem 0rem;
-    padding-bottom: 4%;
     border-right: solid 1px rgb(66, 63, 63);
-    text-align: left;
     width: 8rem;
-    min-height: 100vh;
-    height: 100%;
-    position: fixed;
-    z-index: 8;
   }
 
   .link {
-    text-decoration: none;
-    color: black;
+    color: azure;
     margin-top: 3rem;
     padding-right: 0rem;
     font-size: 14px;
-    border-radius: 5px;
-    font-weight: bolder;
   }
 
   .isActive {
-    text-decoration: none;
-    margin-top: 3rem;
-    padding: 1rem;
     font-size: 14px;
-    border-radius: 5px;
-    font-weight: bolder;
     background-color: rgb(66, 63, 63);
     color: azure;
   }
