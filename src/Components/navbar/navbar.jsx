@@ -8,7 +8,10 @@ export default function Navbar() {
   return (
     <div>
       <nav className="navbar">
-        <Link className={isActive === "dashboard" ? "isActive" : "link"} to="/">
+        <Link
+          className={isActive === "dashboard" ? "isActive" : "link"}
+          to="/dashboard"
+        >
           Dashboard
         </Link>
         <Link

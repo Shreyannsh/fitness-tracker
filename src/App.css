@@ -2,3 +2,16 @@
   text-align: center;
   display: flex;
 }
+
+.mainPages {
+  margin-top: 5rem;
+  margin-left: 18rem;
+  width: 100%;
+}
+
+@media (max-width: 786px) {
+  .mainPages {
+    margin-left: 9rem;
+    margin-right: 2rem;
+  }
+}

@@ -1,4 +1,4 @@
-import "./addFoodModal.css";
+import "../../commonModalCss.css";
 
 import { useDispatch } from "react-redux";
 
@@ -42,8 +42,8 @@ export default function AddFoodModal(props) {
   }
 
   return (
-    <div className="parentFood">
-      <div className="innerFood">
+    <div className="parent">
+      <div className="inner">
         <span className="closeBtn" onClick={() => props.onClose()}>
           X
         </span>

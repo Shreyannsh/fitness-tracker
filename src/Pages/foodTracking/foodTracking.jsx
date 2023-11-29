@@ -1,4 +1,5 @@
 import "./foodTracking.css";
+import "../../commonPageCss.css";
 
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,7 +11,7 @@ import { useState, useEffect } from "react";
 const FoodTracking = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.foodList);
-
+  const loading = useSelector((state) => state.isLoading);
   const [show, setShow] = useState(false);
 
   const removeFunction = (foodId) => {
@@ -23,23 +24,23 @@ const FoodTracking = () => {
   }, []);
 
   return (
-    <div className="foodPage">
+    <div className="pageParent">
       <AddFoodModal onClose={() => setShow(false)} show={show} />
 
       <div className="title">
         <h1>Food List</h1>
       </div>
 
-      <div className="foodList">
-        <button className="food addFoodBtn" onClick={() => setShow(true)}>
+      <div className="list">
+        <button className="addNewBtn" onClick={() => setShow(true)}>
           Add Food
         </button>
-        {state.length <= 0 ? (
+        {state.length <= 0 && loading === false ? (
           <h1 className="emptyListText">EMPTY LIST !</h1>
         ) : (
           state.map(
             ({ _id, foodName, calories, protein, carbohydrate, fat }) => (
-              <li key={_id} className="food">
+              <li key={_id} className=" individualComponent food">
                 <p>
                   <b>{foodName}</b>
                 </p>

@@ -1,4 +1,5 @@
 import "./exerciseTracking.css";
+import "../../commonPageCss.css";
 
 import { RiDeleteBin5Line } from "react-icons/ri";
 
@@ -15,6 +16,7 @@ const ExerciseTracking = () => {
 
   const state = useSelector((state) => state.exerciseList);
   const error = useSelector((state) => state.error);
+  const loading = useSelector((state) => state.isLoading);
 
   const removeFunction = (excerciseId) => {
     dispatch(REMOVE_EXCERCISE(excerciseId));
@@ -26,23 +28,21 @@ const ExerciseTracking = () => {
   }, []);
 
   return (
-    <div className="excercisePage">
+    <div className="pageParent">
       <AddExerciseModal onClose={() => setShow(false)} show={show} />
+      <div className="title">
+        <h1>Excercise List</h1>
+      </div>
 
-      <h1 className="title">Excercise List</h1>
-
-      <div className="exerciseList">
-        <button
-          className="exercise addExerciseBtn"
-          onClick={() => setShow(true)}
-        >
+      <div className="list">
+        <button className="addNewBtn" onClick={() => setShow(true)}>
           Add Excercise
         </button>
-        {state.length <= 0 ? (
+        {state.length <= 0 && loading === false ? (
           <h1 className="emptyListText">EMPTY LIST !</h1>
         ) : (
           state?.map(({ _id, name, duration, caloriesBurned }) => (
-            <li key={_id} className="exercise">
+            <li key={_id} className="individualComponent exercise">
               <p>
                 <b>{name}</b>
               </p>

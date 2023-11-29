@@ -3,7 +3,6 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const baseURL = process.env.REACT_APP_BASE_URL;
-//console.log(baseURL);
 
 export const FETCH_EXCERCISES = () => async (dispatch) => {
   try {
@@ -81,21 +80,6 @@ export const ADD_EXCERCISE = (excercise) => async (dispatch) => {
       toast.success("Exercise added");
       dispatch({ type: "ADD_EXERCISE", payload: data.data });
     }
-    // const response = await axios.post(
-    //   "https://fiitness-app-backend-bbuu.vercel.app/v1/api/exercises/add-exercise",
-    //   {
-    //     ...excercise,
-    //   }
-    // );
-    // .then(function (response) {
-    //   console.log(response);
-    // });
-
-    // console.log(response.data.data);
-
-    // if (response.data.success) {
-    //   dispatch({ type: "ADD_EXCERCISE", payload: response.data.data });
-    // }
   } catch (error) {
     dispatch({ type: "ERROR", payload: error });
   }

@@ -28,14 +28,12 @@ const trackingReducer = (state = initialState, action) => {
       };
 
     case "ADD_EXERCISE":
-      console.log(action.payload);
       return {
         ...state,
         exerciseList: [...state.exerciseList, action.payload],
       };
 
     case "ADD_FOOD":
-      console.log(action.payload);
       return { ...state, foodList: [...state.foodList, action.payload] };
 
     case "ADD_GOAL":
@@ -48,7 +46,7 @@ const trackingReducer = (state = initialState, action) => {
       const updatedExerciseList = state.exerciseList.filter(
         ({ _id }) => _id !== action.payload
       );
-      console.log(updatedExerciseList, "updatedExcerciseList");
+
       return {
         ...state,
         exerciseList: updatedExerciseList,

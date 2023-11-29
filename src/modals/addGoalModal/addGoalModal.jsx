@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { ADD_GOAL } from "../../actions";
 
-import "./addGoalModal.css";
+import "../../commonModalCss.css";
 
 import { toast } from "react-toastify";
 
@@ -37,6 +37,12 @@ export default function AddGoalModal(props) {
 
     if (!emptyEntry) {
       dispatch(ADD_GOAL(newGoal));
+      setNewGoal({
+        goalName: "",
+        description: "",
+        targetDate: 0,
+        targetCalories: 0,
+      });
       props.onClose();
     } else {
       toast.error("Missing Fields!");
@@ -48,8 +54,8 @@ export default function AddGoalModal(props) {
   }
 
   return (
-    <div className="parentGoal">
-      <div className="innerGoal">
+    <div className="parent">
+      <div className="inner">
         <span className="closeBtn" onClick={() => props.onClose()}>
           X
         </span>
@@ -88,16 +94,6 @@ export default function AddGoalModal(props) {
             setNewGoal({ ...newGoal, targetCalories: parseInt(e.target.value) })
           }
         />
-        {/* <label htmlFor="statusSelect">Status</label>
-      <select
-        id="statusSelect"
-        value={status}
-        onChange={(e) => setStatus(e.target.value)}
-      >
-        <option value="inProgress">In Progress</option>
-        <option value="achieved">Achieved</option>
-        <option value="abandoned">Abandoned</option>
-      </select> */}
         <button className="addBtn" onClick={() => addGoalFunction()}>
           Add goal
         </button>

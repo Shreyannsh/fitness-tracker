@@ -36,11 +36,12 @@ const Dashboard = () => {
   return (
     <div className="outer">
       <div className="dashboard">
-        <div className="category">
+        <img src="../../assets/backgroundd.png" alt="image01" />
+        <div className="category1">
           <p className="text a">{totalCaloriesBurnt}</p>
           <h3>Total Calories Burned</h3>
         </div>
-        <div className="category">
+        <div className="category1">
           <p className="text b">{totalCaloriesConsumed}</p>
           <h3>Total Calories Consumed</h3>
         </div>

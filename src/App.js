@@ -13,6 +13,7 @@ import Header from "./Components/header/header";
 import { useSelector } from "react-redux";
 
 import Loader from "./Components/loader/loader";
+import HomePage from "./Pages/homePage/homePage";
 
 function App() {
   const loading = useSelector((state) => state.loading);
@@ -34,12 +35,15 @@ function App() {
       <Header />
       <Navbar />
       <Loader loading={loading} />
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/excercise" element={<ExerciseTracking />} />
-        <Route path="/food" element={<FoodTracking />} />
-        <Route path="/goal" element={<GoalTracking />} />
-      </Routes>
+      <div className="mainPages">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/excercise" element={<ExerciseTracking />} />
+          <Route path="/food" element={<FoodTracking />} />
+          <Route path="/goal" element={<GoalTracking />} />
+        </Routes>
+      </div>
     </div>
   );
 }

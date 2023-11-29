@@ -1,0 +1,144 @@
+.pageParent {
+  position: relative;
+  width: 100%;
+}
+
+.title {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 60px;
+  margin-left: 16rem;
+  background-color: white;
+  z-index: 7;
+}
+
+.name {
+  margin-right: 1rem;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+}
+
+.individualComponent {
+  box-shadow: 1px 3px 6px 1px rgb(0, 0, 0, 0.4);
+  margin: 1rem 1rem;
+  padding: 0rem 1rem;
+  border-radius: 10px;
+  word-wrap: break-word;
+  font-weight: 500;
+  position: relative;
+  text-align: left;
+  flex-wrap: wrap;
+  height: auto;
+  width: auto;
+  max-width: 13rem;
+}
+
+.addNewBtn {
+  box-shadow: 1px 3px 6px 1px rgb(0, 0, 0, 0.4);
+  margin: 1rem 1rem;
+  padding: 0rem 1rem;
+  border-radius: 10px;
+  word-break: break-all;
+  height: 13rem;
+  width: 12rem;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: palevioletred;
+  color: rgb(130, 37, 68);
+  cursor: pointer;
+  text-align: center;
+}
+
+.addNewBtn:hover {
+  background-color: rgb(130, 37, 68);
+  color: palevioletred;
+}
+
+.removeBtn {
+  color: rgb(248, 0, 0);
+  border-radius: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px 10px;
+}
+
+.removeBtn:hover {
+  color: black;
+}
+
+.emptyListTextBox {
+  position: fixed;
+  left: 43%;
+  right: 40%;
+  margin: 2rem 4rem;
+}
+
+.emptyListText {
+  padding-top: 2rem;
+  width: 20rem;
+  height: 5rem;
+  border: 5px solid;
+  box-shadow: 0px 2px 6px 2px rgb(0, 0, 0, 0.6);
+  border-radius: 5px;
+}
+
+@media (max-width: 1179px) {
+  .emptyListTextBox {
+    margin-left: 12rem;
+  }
+
+  .emptyListText {
+    width: 14rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .list {
+    justify-content: center;
+  }
+  .individualComponent {
+    padding: 0rem 1rem;
+    height: auto;
+    width: auto;
+    min-width: 130px;
+    font-size: 12px;
+  }
+
+  .addNewBtn {
+    min-height: 8rem;
+    height: auto;
+    min-width: 10rem;
+    width: auto;
+    font-size: 16px;
+  }
+
+  .title {
+    margin-left: 7rem;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+  }
+
+  .emptyListTextBox {
+    right: 0;
+    left: 0;
+    top: 20rem;
+    margin-right: 40%;
+    margin-left: 40%;
+  }
+  .emptyListText {
+    width: 11.5rem;
+    font-size: large;
+    margin-right: 1rem;
+  }
+}

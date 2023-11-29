@@ -1,4 +1,4 @@
-import "./addExcerciseModal.css";
+import "../../commonModalCss.css";
 
 import { useState } from "react";
 import { useDispatch } from "react-redux";
