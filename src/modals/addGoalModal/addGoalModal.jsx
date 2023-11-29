@@ -82,6 +82,7 @@ export default function AddGoalModal(props) {
           className="input"
           name="date"
           type="date"
+          min={new Date().toISOString().split("T")[0]}
           onChange={(e) => setDateFunc(e.target.value)}
         />
         <label htmlFor="targetCaloriesValue">Target Calories Value</label>
