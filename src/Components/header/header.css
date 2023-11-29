@@ -1,11 +1,12 @@
 .header {
   position: fixed;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   right: 0;
   left: 0;
   text-align: left;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem 0.5rem 1rem;
   border-bottom: solid 2px transparent;
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 1);
   background-color: rgb(44, 43, 43);
@@ -16,6 +17,55 @@
   color: ivory;
   font-size: 2.5rem;
   font-weight: bold;
+}
+
+.heading:hover {
+  color: rgb(252, 252, 201);
+}
+
+.about {
+  text-decoration: none;
+  color: azure;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 5px 20px;
+  margin-right: -1rem;
+}
+
+.about:hover {
+  text-decoration: none;
+  font-size: 1.5rem;
+  padding: 5px 20px;
+  border-radius: 5px;
+  font-weight: bolder;
+  background: rgb(2, 2, 2);
+  background: linear-gradient(
+    0deg,
+    rgba(2, 2, 2, 1) 0%,
+    rgba(255, 255, 255, 0.6) 100%
+  );
+  color: azure;
+}
+
+.isActiveAbout {
+  color: azure;
+  text-decoration: none;
+  font-size: 1.5rem;
+  padding: 5px 20px;
+  border-radius: 5px;
+  font-weight: bolder;
+  background: rgb(2, 2, 2);
+  background: linear-gradient(
+    0deg,
+    rgba(2, 2, 2, 1) 0%,
+    rgba(255, 255, 255, 0.6) 100%
+  );
+}
+
+.icon {
+  position: relative;
+  top: 5px;
+  font-size: 1.5rem;
 }
 
 @media (max-width: 555px) {

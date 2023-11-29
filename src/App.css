@@ -3,7 +3,7 @@
   display: flex;
   min-height: 100vh;
   height: 100%;
-  background-image: url("../public/assets/backgroundd.png");
+  background-image: url("../public/assets/background.jpg");
   background-size: cover;
 }
 

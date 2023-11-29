@@ -14,6 +14,7 @@ import { useSelector } from "react-redux";
 
 import Loader from "./Components/loader/loader";
 import HomePage from "./Pages/homePage/homePage";
+import About from "./Pages/about/about";
 
 function App() {
   const loading = useSelector((state) => state.loading);
@@ -42,6 +43,7 @@ function App() {
           <Route path="/excercise" element={<ExerciseTracking />} />
           <Route path="/food" element={<FoodTracking />} />
           <Route path="/goal" element={<GoalTracking />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </div>
     </div>

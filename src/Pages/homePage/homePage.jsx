@@ -1,7 +1,18 @@
-import { Link } from "react-router-dom";
 import "./homePage.css";
 
+import { Link } from "react-router-dom";
+
+import { useEffect } from "react";
+
+import { useDispatch } from "react-redux";
+
 function HomePage() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({ type: "IS_ACTIVE", payload: "" });
+  }, []);
+
   return (
     <div className="homePage">
       <div className="upperSection">
