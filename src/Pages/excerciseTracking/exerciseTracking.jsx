@@ -15,7 +15,13 @@ const ExerciseTracking = () => {
   const [show, setShow] = useState(false);
 
   const state = useSelector((state) => state.exerciseList);
+
   const loading = useSelector((state) => state.loading);
+
+  const totalCaloriesBurnt = state?.reduce(
+    (acc, crr) => acc + crr.caloriesBurned,
+    0
+  );
 
   const removeFunction = (excerciseId) => {
     dispatch(REMOVE_EXCERCISE(excerciseId));
@@ -26,13 +32,15 @@ const ExerciseTracking = () => {
     dispatch(FETCH_EXCERCISES());
   }, []);
 
-  console.log(state.length, loading);
-
   return (
     <div className="pageParent">
       <AddExerciseModal onClose={() => setShow(false)} show={show} />
       <div className="title">
-        <h1>Excercise List</h1>
+        <h1>Excercise List </h1>
+        <div className="caloricValue">
+          <p>{totalCaloriesBurnt}</p>
+          <p>Total calories burnt</p>
+        </div>
       </div>
 
       <div className="list">

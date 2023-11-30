@@ -14,6 +14,11 @@ const FoodTracking = () => {
   const loading = useSelector((state) => state.loading);
   const [show, setShow] = useState(false);
 
+  const totalCaloriesConsumed = state?.reduce(
+    (acc, crr) => acc + crr.calories,
+    0
+  );
+
   const removeFunction = (foodId) => {
     dispatch(REMOVE_FOOD(foodId));
   };
@@ -29,6 +34,10 @@ const FoodTracking = () => {
 
       <div className="title">
         <h1>Food List</h1>
+        <div className="caloricValue">
+          <p>{totalCaloriesConsumed}</p>
+          <p>Total calories consumed</p>
+        </div>
       </div>
 
       <div className="list">

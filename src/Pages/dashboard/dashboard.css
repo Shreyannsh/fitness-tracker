@@ -98,3 +98,10 @@
     padding: 5px 28px;
   }
 }
+
+@media (max-width: 405px) {
+  .dashboard {
+    margin-left: 0rem;
+    grid-template-columns: 1fr;
+  }
+}

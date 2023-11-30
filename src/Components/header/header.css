@@ -29,7 +29,7 @@
   font-size: 1.5rem;
   font-weight: bold;
   padding: 5px 20px;
-  margin-right: -1rem;
+  margin-right: -1.5rem;
 }
 
 .about:hover {
@@ -71,6 +71,20 @@
 @media (max-width: 555px) {
   .heading {
     font-size: 1.5rem;
-    margin-bottom: 20px;
+    margin-top: 5px;
+    margin-bottom: 12px;
+  }
+  .about {
+    text-decoration: none;
+    color: azure;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 5px 10px;
+    margin-right: -2rem;
+  }
+  .isActiveAbout {
+    font-size: 1rem;
+    padding: 5px 10px;
+    margin-right: -1rem;
   }
 }

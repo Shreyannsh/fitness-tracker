@@ -16,6 +16,11 @@ const GoalTracking = () => {
 
   const [show, setShow] = useState(false);
 
+  const totalCaloriesGoal = state?.reduce(
+    (acc, crr) => acc + crr.targetCalories,
+    0
+  );
+
   const removeFunction = (goalId) => {
     dispatch(REMOVE_GOAL(goalId));
   };
@@ -31,6 +36,10 @@ const GoalTracking = () => {
 
       <div className="title">
         <h1>Goal List</h1>
+        <div className="caloricValue">
+          <p>{totalCaloriesGoal}</p>
+          <p>Total calories goal</p>
+        </div>
       </div>
 
       <div className="list">
