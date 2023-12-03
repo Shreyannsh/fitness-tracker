@@ -76,12 +76,8 @@ Fitness Tracker app is a responsive webapp to measure calories burnt through exe
 
 ![about page](https://github.com/Shreyannsh/fitness-trackerr/assets/111145568/00dda0b4-9f9d-424d-b52d-b0abcc21030d)
 
-![add excercise page](https://github.com/Shreyannsh/fitness-trackerr/assets/111145568/81f1743f-0066-44b4-a3b4-987c775e42e5)
-
 ![add food page](https://github.com/Shreyannsh/fitness-trackerr/assets/111145568/15eed2cc-1dc6-4f83-8ade-358ea70f3ad1)
 
 ![excercise page](https://github.com/Shreyannsh/fitness-trackerr/assets/111145568/3a328200-2f14-41f7-8933-0259788c761e)
 
 ![food page](https://github.com/Shreyannsh/fitness-trackerr/assets/111145568/2761a8ad-1181-42d1-b2c5-b94f52abec98)
-
-![goal page](https://github.com/Shreyannsh/fitness-trackerr/assets/111145568/8cbb5e54-c2c1-4cba-8393-e618b23bc42c)
