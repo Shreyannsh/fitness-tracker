@@ -2,6 +2,14 @@
 
 ## Description
 Fitness Tracker app is a responsive webapp to measure calories burnt through exercise , calories consumed through diet and calculates calories required to acheive the set goal.
+
+## Tech stack
+1. React
+2. Redux
+3. Javascript
+4. Html
+5. Css
+
 <table>
 <tr>
     <td>
@@ -26,13 +34,6 @@ Fitness Tracker app is a responsive webapp to measure calories burnt through exe
     </td>
 </tr>
 </table>
-
-## Tech stack
-1. React
-2. Redux
-3. Javascript
-4. Html
-5. Css
 
 ## Features
 
